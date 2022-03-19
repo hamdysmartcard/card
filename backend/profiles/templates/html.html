@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+{% load static %}
+<!-- saved from url=(0096)http://xvelopers.com/demos/html/paper-knowledgebase-1.0.0/index.html?storefront=envato-elements# -->
+<html lang="en" class="no-applicationcache cors no-ie8compat history json postmessage strictmode no-devicemotion no-deviceorientation filereader localstorage sessionstorage hashchange cssgradients multiplebgs opacity cssremunit rgba fileinput formattribute placeholder hsla supports fontface generatedcontent cssscrollbar formvalidation textshadow fullscreen filesystem cssanimations backgroundsize borderradius borderimage boxshadow csscolumns csscolumns-width csscolumns-span csscolumns-fill csscolumns-gap csscolumns-rule csscolumns-rulecolor csscolumns-rulestyle csscolumns-rulewidth csscolumns-breakbefore csscolumns-breakafter csscolumns-breakinside flexbox flexboxlegacy no-overflowscrolling cssreflections csstransforms csstransforms3d csstransitions"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://xvelopers.com/demos/html/paper-knowledgebase-1.0.0/assets/img/basic/favicon.ico" type="image/x-icon">
+    <title>{{profile.name}}</title>
+    <link rel="stylesheet" href= "{% static 'css/app.css' %}">
+    <style>
+        .loader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #F5F8FA;
+            z-index: 9998;
+            text-align: center;
+        }
+
+        .plane-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+    </style>
+</head>
+<body class="loaded" data-new-gr-c-s-check-loaded="14.1052.0" data-gr-ext-installed="">
+<!-- Pre loader -->
+<div class="paper-loading">
+<!-- Header -->
+<main>
+    <!-- Search Section -->
+    <section class="search-section home-search">
+        <div class="masthead text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-md-auto">
+                        <h1>{{profile.name}}</h1>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Topics -->
+    <section class="topics">
+        <div class="container">
+            <div class="row">
+                <!-- profile -->
+                <div class="col-xl-4 col-md-6">
+                    <div class="topics-wrapper border-style">
+                        <h3>Profile</h3>
+                        <ul class="topics-list">
+                            <li>name : {{profile.name}}</li>
+                            <li>national id : {{profile.national_id}}</li>
+                            <li>phone number : {{profile.phone_number}}</li>
+                            <li>address : {{profile.address}}</li>
+                            <li>blood type : {{profile.blood_type}}</li>
+                            {% if is_addictive == True %}
+                            <li>addictive</li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+                <!-- social media -->
+                <div class="col-xl-4 col-md-6">
+                    <div class="topics-wrapper border-style">
+                        <h3>Social media</h3>
+                        <ul class="topics-list">
+                            <li>facebook : {{profile.facebook}}</li>
+                            <li>instagram : {{profile.instagram}}</li>
+                            <li>whatsapp : {{profile.whatsapp}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- diseases -->
+                <div class="col-xl-4 col-md-6">
+                    <div class="topics-wrapper border-style">
+                        <h3>Diseases</h3>
+                        <ul class="topics-list">
+                            {% for disease in diseases %}
+                            <li>disease : {{disease.disease}}</li>
+                            {% if disease.is_healed == True %}
+                            <li>healed : yes</li>
+                            {% else %}
+                            <li>healed : No</li>
+                            {% endif %}
+                            <li>discover_date : {{disease.discover_date}}</li>
+                            <br>
+                            {%endfor%}
+                        </ul>
+                    </div>
+                </div>
+                <!-- treatments -->
+                <div class="col-xl-4 col-md-6">
+                    <div class="topics-wrapper border-style">
+                        <h3>Treatments</h3>
+                        <ul class="topics-list">
+                            {% for treatment in treatments %}
+                            <li>treatment : {{treatment.treatment}}</li>
+                            {% if treatment.is_healed == True %}
+                            <li>healed : yes</li>
+                            {% else %}
+                            <li>healed : No</li>
+                            {% endif %}
+                            <li>dose : {{treatment.dose}}</li>
+                            <br>
+                            {%endfor%}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
